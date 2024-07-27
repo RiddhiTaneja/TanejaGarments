@@ -21,7 +21,8 @@
     border-right: none;
     position: sticky;
     top:  0;
-    width: auto;
+    flex-wrap: wrap;
+    /* width: auto; */
 
   
 }
