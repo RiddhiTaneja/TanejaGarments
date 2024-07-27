@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    {{>generalcss}}
+
+      <style>
+        .cart1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cart-list {
+            width: 800px;
+            margin: auto;
+            list-style: none;
+
+        }
+
+        .cart-list {
+            width: auto;
+            padding: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    flex-direction: column;
+    align-content: flex-start; 
+    align-items: center;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px #ccc;
+    height: auto;
+    row-gap: 15px;
+    {{!-- background-color:  --}}
+    background: #6e4e37;
+}
+
+        .increaseQuantity a:link,
+        .increaseQuantity a:visited,
+        .decreaseQuantity a:visited,
+        .decreaseQuantity a:link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .buyNowBtn {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color:#6e4e37;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 30%;
+            height: auto;
+            {{!-- position: center; --}}
+            margin: auto;
+            margin-left: 35%;
+            text-align: center;
+
+        }
+        .cartimg{
+            height: auto;
+            
+        }
+        .totalPrice{
+                width:30%;
+    padding: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    margin-left: 35%;
+    flex-direction: column;
+    align-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    {{!-- box-shadow: 5px 10px 10px #ccc; --}}
+    height: auto;
+    /* row-gap: 15px; */
+    background-color:#6e4e37;
+    color: white;
+        }
+    </style>
+</head>
+<body>
+    {{>navbar}}
+   
+    {{!-- <h1>Welcome to the Cart</h1> --}}
+
+      <span class="totalPrice" > Total Price:{{totalPrice}}</span>
+ 
+    <ul class=" cart-list" >
+      
+        {{#each cart as |c| }}
+        <li class="cart-list-item">
+            <div class="cartimg">
+                <img src={{c.id.imageUrl}} alt="" width="100px">
+            </div>
+            <div>
+                <p>Name:{{c.id.name}}</p>
+                <p>Price:{{c.id.price}}</p>
+             <div> 
+            Quantity:
+            <a href="shop/cart/increase/{{c.id._id}}">
+            <button class="increaseQuantity">+</button>
+            </a>{{c.quantity}}
+
+            <a href="shop/cart/decrease/{{c.id._id}}">
+            <button class="decreaseQuantity">-</button>
+            </a>
+               <div id={{c.id._id}}></div>
+              
+               </div>
+               <div>
+  </div>
+               </div>
+        </li>
+          
+        {{/each}}
+    </ul>
+
+ <a href="/shop/cart/buy">
+        <button class="buyNowBtn">
+            Buy Now
+        </button>
+    </a>
+  
+   
+<script src="/js/utils1/axois.min.js"></script>
+<script src="/js/cart.js"></script>
+</body>
+</html>
