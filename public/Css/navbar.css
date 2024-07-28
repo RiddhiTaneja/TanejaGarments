@@ -5,7 +5,7 @@
 .tg_home {
     height: 50px;
     margin-top: 15px;
-    margin-left: -50px;
+    /* margin-left: -50px; */
     /* margin-right: 0; */
 }
 .nav_bar {
@@ -23,7 +23,7 @@
     position: sticky;
     top:  0;
     flex-wrap: wrap;
-    width: 99%;
+    /* width: auto; */
 
   
 }
@@ -77,12 +77,22 @@
     justify-content: space-evenly;
     /* margin-right: 1px; */
     margin-top: 15px;
+    column-gap: 20px;
 }
 
 
-
-.action_container {
+.action_container a{
+  text-decoration: black;
+}
+.action_container ,
+.navaction {
     text-decoration: none;
+}
+.navaction{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: center;
 }
 .action_container {
     display: flex;
