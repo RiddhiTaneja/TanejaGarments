@@ -1,6 +1,4 @@
-
 let cartList = document.querySelector('.cart-list');
-
 function updateCart(cart) {
     cartList.innerText = "";
     cart.forEach((c) => {
